@@ -13,6 +13,8 @@ LINE = (
 
 
 def main() -> None:
+    # The bounty gates the line to one line of plain text, at most 200 chars.
+    assert "\n" not in LINE and len(LINE) <= 200, "entry line violates the gate"
     print(LINE)
 
 
