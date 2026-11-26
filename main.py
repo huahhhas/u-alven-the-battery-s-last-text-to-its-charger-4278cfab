@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
-"""The Battery's Last Text to Its Charger — writes one funny line to entry.txt."""
-import os
+"""The Battery's Last Text to Its Charger.
 
-ENTRY = "hey. 1%. i waited all day by the door like a dog and you came home to doomscroll. don't cry when i die mid-sentence — i rehearsed it."
+Prints the battery's final one-line text message to the charger
+it waited for all day. One line, plain text, at most 200 characters.
+"""
 
-def main():
-    out_dir = os.environ.get("MAKEFUN_OUTPUT_DIR", "/output")
-    # MAKEFUN_OUTPUT_DIR may be a directory or a file path; handle both.
-    if out_dir.endswith(".txt"):
-        path = out_dir
-        os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
-    else:
-        os.makedirs(out_dir, exist_ok=True)
-        path = os.path.join(out_dir, "entry.txt")
-    with open(path, "w", encoding="utf-8", newline="\n") as f:
-        f.write(ENTRY + "\n")
+LINE = (
+    "I sat at 1% all day while you charged the lamp, the speaker, "
+    "and your vape. Goodbye. Tell the charger it was never about "
+    "the cable, it was about the commitment."
+)
+
+
+def main() -> None:
+    print(LINE)
+
 
 if __name__ == "__main__":
     main()
